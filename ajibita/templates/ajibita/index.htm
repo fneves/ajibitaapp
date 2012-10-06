@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block content %}
+
+    <div class="row" >
+        <div class="span12">
+            <div id="simplegallery1"></div>
+        </div>
+    </div><!--/span-->
+
+
+    <hr id="empresa">
+    <div class="row" style="margin-top: 100px;">
+        <div class="span5">
+            <div style="margin-top: 100px;">
+                <img src="{% static "img/home/slideshow/slide1.jpg" %}" alt="Smiley face" class="img-polaroid" >
+            </div>
+        </div>
+        <div class="span7">
+                <h3>A Empresa</h3>
+                <br>
+                <p>O ano de 1999 marcou a grande aposta do grupo no comércio dos materiais de construção, acompanhando o forte crescimento do mercado da construção. Neste ano foi criada a AJIBITA – Materiais de Construção, com sede em Abrantes.</p>
+
+                <p>O leque de produtos e serviços desta empresa não tem parado de crescer, em resposta às novas técnicas e tendências da construção.</p>
+
+
+                <p>Representa diversas marcas nacionais e estrangeiras e conta com numerosos revendedores na sua carteira de clientes.</p>
+
+                <p>Para garantir uma adequada resposta às solicitações do mercado, a Ajibita investe cuidadosamente na formação permanente dos seus colaboradores nas mais diversas áreas.</p>
+
+                <p>A par do acompanhamento da evolução do mercado da construção, a Ajibita tem, actualmente, como grande objectivo a expansão no mercado nacional e também nos países lusófonos, para alguns dos quais já tem habitualmente exportações.</p>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascripts %}
+    <script src="{%  static "js/simplegallery.js" %} "></script>
+    <script type="text/javascript">
+
+        var mygallery=new simpleGallery({
+            wrapperid: "simplegallery1", //ID of main gallery container,
+            dimensions: [940, 350], //width/height of gallery in pixels. Should reflect dimensions of the images exactly
+            imagearray: [
+                ["{%  static "img/home/slideshow/slide1.jpg"  %}", "http://en.wikipedia.org/wiki/Swimming_pool", "_new", "There's nothing like a nice swim in the Summer."],
+                ["{%  static "img/home/slideshow/slide2.jpg"  %}", "http://en.wikipedia.org/wiki/Cave", "", ""],
+                ["http://i30.tinypic.com/531q3n.jpg", "", "", "Eat your fruits, it's good for you!"],
+                ["http://i31.tinypic.com/119w28m.jpg", "", "", ""]
+            ],
+            autoplay: [true, 2500, 2], //[auto_play_boolean, delay_btw_slide_millisec, cycles_before_stopping_int]
+            persist: false, //remember last viewed slide and recall within same session?
+            fadeduration: 500, //transition duration (milliseconds)
+            oninit:function(){ //event that fires when gallery has initialized/ ready to run
+                //Keyword "this": references current gallery instance (ie: try this.navigate("play/pause"))
+            },
+            onslide:function(curslide, i){ //event that fires after each slide is shown
+                //Keyword "this": references current gallery instance
+                //curslide: returns DOM reference to current slide's DIV (ie: try alert(curslide.innerHTML)
+                //i: integer reflecting current image within collection being shown (0=1st image, 1=2nd etc)
+            }
+        })
+    </script>
+
+{% endblock %}
