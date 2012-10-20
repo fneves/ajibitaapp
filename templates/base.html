@@ -12,12 +12,22 @@
     <link href='http://fonts.googleapis.com/css?family=Alegreya+SC:900' rel='stylesheet' type='text/css'>
     <link href="{%  static "css/ajibita-theme1.css"%}"  rel="stylesheet">
     <link href="{%  static "css/font-awesome.css" %}" rel="stylesheet" >
-    <link href="{%  static "css/ajibita.css"%}"  rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!-- Add the stylesheet you are going to use here; no need to include the anythingslider.css from the plugin -->
+    <link rel="stylesheet" href="{%  static "js/anythingSlider/css/anythingslider.css"%}">
+{#    <link rel="stylesheet" href="{%  static "js/anythingSlider/css/theme-minimalist-round.css"%}">#}
+{#    <link rel="stylesheet" href="{%  static "js/anythingSlider/css/theme-minimalist-square.css"%}">#}
+    <link rel="stylesheet" href="{%  static "js/anythingSlider/css/theme-polished.css"%}">
+{#    <link rel="stylesheet" href="{%  static "js/anythingSlider/css/theme-metallic.css"%}">#}
+{#    <link rel="stylesheet" href="{%  static "js/anythingSlider/css/theme-cs-portfolio.css"%}">#}
+{#    <link rel="stylesheet" href="{%  static "js/anythingSlider/css/theme-construction.css"%}">#}
+    <link href="{%  static "css/ajibita.css"%}"  rel="stylesheet">
+
 
 
     <!-- Le fav and touch icons -->
@@ -34,38 +44,38 @@
     </style>
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar">
 
-<div id="top"></div>
 <div  class="navbar">
     <div class="navbar-inner navbar-fixed-top">
         <div class="container">
             <a class="brand logo" href="#">AJIBITA</a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li class="active"><a  href="#top" id="topLink">Início</a></li>
+                    <li class="active"><a id="inicioLink"  href="inicio">Início</a></li>
                     <li><a href="#empresa" id="empresaLink" name="empresa" >A empresa</a></li>
-                    <li><a href="#prod" name="prodLink">Produtos</a></li>
-                    <li><a href="#promo" name="promoLink">Promoções</a></li>
+                    <li><a href="#produtos" id="prodLink" name="produtos">Produtos</a></li>
                     <li><a href="#contactos" id="contactosLink" >Contactos</a></li>
-                    <li><a href="#grupo"  name="grupoLink">O Grupo</a></li>
+                    <li><a href="#grupo"  id="grupoLink">O Grupo</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container bodycontent">
     {% block content %}
-
 
     {% endblock %}
 </div>
-
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{%  static "js/jquery-1.8.0.js" %}"></script>
 <script src="{%  static "js/bootstrap.js" %}"></script>
+<!-- AnythingSlider -->
+<script src="{%  static "js/anythingSlider/js/jquery.anythingslider.min.js"%}"></script>
+<!-- Optional extension -->
+<script src="{%  static "js/anythingSlider/js/jquery.anythingslider.fx.min.js"%}"></script>
 
 </div>
 
@@ -78,6 +88,13 @@
     }
 
     $(document).ready(function(){
+        $('#inicioLink').each(function(index,value){
+            $(value).bind("click",function(e) {
+                e.preventDefault();
+                scrollTo("inicio");
+            });
+        });
+
         $('#empresaLink').each(function(index,value){
             $(value).bind("click",function(e) {
                 e.preventDefault();
@@ -88,14 +105,7 @@
         $('#prodLink').each(function(index,value){
             $(value).bind("click",function(e) {
                 e.preventDefault();
-                scrollTo("prod");
-            });
-        });
-
-        $('#promoLink').each(function(index,value){
-            $(value).bind("click",function(e) {
-                e.preventDefault();
-                scrollTo("promo");
+                scrollTo("produtos");
             });
         });
 
@@ -116,7 +126,7 @@
 </script>
 </body>
 <footer class="footer">
-    <div id="contactos" class="container">
+    <div  class="container">
         <div class="row">
 
             <div class="span4 ">
@@ -126,22 +136,31 @@
                         <i class="icon-phone"></i>&nbsp;&nbsp;Contactos
                     </div>
                     <br>
+                    <div style="font-size: 16px;">
+                        <strong> AJIBITA - Materiais de Construção SA</strong>
+                    </div>
+                    <br>
+
                     <address>
-                        <div style="font-size: 16px;">
-                            <strong> AJIBITA - Materiais de Construção SA</strong>
-                        </div>
-                        Zona Industrial Olho de Boi-Alferrarede<br>
-                        2200-480 ABRANTES<br>
-                        Portugal<br>
-                        <abbr title="Telefone">Tel:</abbr> 00351 241 360 870<br>
-                        <div style="font-size: 16px;">
-                            <i class="icon-envelope"></i>&nbsp;&nbsp;<a href="mailto:#">first.last@gmail.com</a>
-                        </div><br>
-                        <div style="font-size: 30px;">
-                            <a href="http://pt-pt.facebook.com/pages/Ajibita-SA/113871721959354" target="_blank" class="social">
-                                <i class="icon-facebook-sign icon-large"></i></a>
-                        </div>
+                        <img src="{%  static "img/red-dot.png"%}" style="width: 24px; height: 24px; border: 0px; padding: 0px">Zona Industrial Olho de Boi-Alferrarede<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2200-480 ABRANTES<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Portugal<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<abbr title="Telefone">Tel:</abbr> 00351 241 360 870<br>
                     </address>
+
+                    <address>
+                        <img src="{%  static "img/blue-dot.png"%}" style="width: 24px; height: 24px; border: 0px; padding: 0px">Zona Industrial Olho de Boi-Alferrarede<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2200-480 ABRANTES<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Portugal<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<abbr title="Telefone">Tel:</abbr> 00351 241 360 870<br>
+                    </address>
+                    <div style="font-size: 16px;">
+                        <i class="icon-envelope"></i>&nbsp;&nbsp;<a href="mailto:#">first.last@gmail.com</a>
+                    </div><br>
+                    <div style="font-size: 30px;">
+                        <a href="http://pt-pt.facebook.com/pages/Ajibita-SA/113871721959354" target="_blank" class="social">
+                            <i class="icon-facebook-sign icon-large"></i></a>
+                    </div>
                 </div>
             </div>
 
@@ -152,21 +171,22 @@
                     <div style="font-size: 24px;">
                         <i class="icon-screenshot"></i>&nbsp;&nbsp;Localização
                     </div>
+
                     <br>
-                    <div class="img-polaroid">
-                        <iframe width="530" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pt-PT&amp;geocode=&amp;q=Ajibita&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=38.638819,86.572266&amp;t=h&amp;ie=UTF8&amp;hq=Ajibita&amp;hnear=&amp;radius=15000&amp;ll=39.474697,-8.191853&amp;spn=0.023189,0.036478&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=pt-PT&amp;geocode=&amp;q=Ajibita&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=38.638819,86.572266&amp;t=h&amp;ie=UTF8&amp;hq=Ajibita&amp;hnear=&amp;radius=15000&amp;ll=39.474697,-8.191853&amp;spn=0.023189,0.036478&amp;z=14" style="color:#0000FF;text-align:left">Ver mapa maior</a></small>
+                    <div class="img-polaroid" style="width:640px; height:480px">
+                        <iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.pt/maps/ms?msa=0&amp;msid=206657056123715244294.0004cc063dd97cf0e78c4&amp;ie=UTF8&amp;t=m&amp;ll=39.528937,-8.09761&amp;spn=0.254214,0.439453&amp;z=11&amp;output=embed"></iframe><br /><small>Ver <a href="https://maps.google.pt/maps/ms?msa=0&amp;msid=206657056123715244294.0004cc063dd97cf0e78c4&amp;ie=UTF8&amp;t=m&amp;ll=39.528937,-8.09761&amp;spn=0.254214,0.439453&amp;z=11&amp;source=embed" style="color:#0000FF;text-align:left">Ajibita</a> num mapa maior</small>
                     </div>
 
                 </div>
                 <br><br>
-
-                <div class="pull-right">
-                    <p>&copy; AJIBITA 2012</p>
-                </div>
             </div>
 
         </div>
-
+        <div class="row">
+             <div class="pull-right">
+                 <p>&copy; AJIBITA 2012</p>
+             </div>
+        </div>
     </div>
 </footer>
 </html>
