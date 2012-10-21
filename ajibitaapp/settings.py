@@ -162,3 +162,6 @@ DATABASES = {
 import dj_database_url
 #commment on development time
 DATABASES['default'] =  dj_database_url.config()
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
