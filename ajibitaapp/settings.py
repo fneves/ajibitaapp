@@ -1,6 +1,9 @@
 # Django settings for ajibitaapp project.
 import os.path
 
+import os.path
+root = os.path.dirname(__file__).replace('\\','/')
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -38,7 +41,11 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/home/fabio/projects/ajibitaapp/upload/'
+
+MEDIA_ROOT = root + '/../upload/'
+STATIC_ROOT = root + '/../static/'
+
+#MEDIA_ROOT = '/home/fabio/projects/ajibitaapp/upload/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -95,7 +102,7 @@ ROOT_URLCONF = 'ajibitaapp.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'ajibitaapp.wsgi.application'
 
-TEMPLATE_DIRS = ('/home/fabio/projects/ajibitaapp/templates',os.path.join(os.path.dirname(__file__), 'templates'),)
+TEMPLATE_DIRS = (root +'/../templates',os.path.join(os.path.dirname(__file__), 'templates'),)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
