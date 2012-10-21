@@ -161,7 +161,7 @@ DATABASES = {
 
 import dj_database_url
 #commment on development time
-#DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config()
 
 MEDIA_ROOT = '/upload/'
 STATIC_ROOT = '/static/'
