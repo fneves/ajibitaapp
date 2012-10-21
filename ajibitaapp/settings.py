@@ -168,9 +168,9 @@ STATIC_ROOT = '/static/'
 
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-#AWS_ACCESS_KEY_ID = 'AKIAIO62AUQ62G2AU3AA'
-#AWS_SECRET_ACCESS_KEY = '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'
-#AWS_STORAGE_BUCKET_NAME = 'ajibita'
+AWS_ACCESS_KEY_ID = 'AKIAIO62AUQ62G2AU3AA'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'ajibita'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 DEFAULT_FILE_STORAGE = 'ajibitaapp.s3utils.MediaRootS3BotoStorage'
