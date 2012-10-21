@@ -42,8 +42,8 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 
-MEDIA_ROOT = root + '/../upload/'
-STATIC_ROOT = root + '/../static/'
+#MEDIA_ROOT = root + '/../upload/'
+#STATIC_ROOT = root + '/../static/'
 
 #MEDIA_ROOT = '/home/fabio/projects/ajibitaapp/upload/'
 
@@ -161,8 +161,18 @@ DATABASES = {
 
 import dj_database_url
 #commment on development time
-DATABASES['default'] =  dj_database_url.config()
+#DATABASES['default'] =  dj_database_url.config()
+
+MEDIA_ROOT = '/upload/'
+STATIC_ROOT = '/static/'
+
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-#STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+#AWS_ACCESS_KEY_ID = 'AKIAIO62AUQ62G2AU3AA'
+#AWS_SECRET_ACCESS_KEY = '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'
+#AWS_STORAGE_BUCKET_NAME = 'ajibita'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+DEFAULT_FILE_STORAGE = 'ajibitaapp.s3utils.MediaRootS3BotoStorage'
+STATICFILES_STORAGE  = 'ajibitaapp.s3utils.StaticRootS3BotoStorage'
 
