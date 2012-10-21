@@ -19,5 +19,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     (r'^upload/(?P<path>.*)$', 'django.views.static.serve',
      {'document_root': settings.MEDIA_ROOT}),
+    (r'^js/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'templates/js'}),
 
 )

@@ -5,25 +5,6 @@
     font-size: 50px;
 }
 
-/*Make sure your page contains a valid doctype at the top*/
-#simplegallery1{ //CSS for Simple Gallery Example 1
-    position: relative; /*keep this intact*/
-    visibility: hidden; /*keep this intact*/
-
-    border: 1px solid #D6D6D6;
-
-    -moz-border-radius:  0px 0px 6px 6px;
-    -webkit-border-radius: 0px 0px 6px 6px;
-    border-radius: 0px 0px 0px 0px;
-
-    box-shadow: 0 0 12px
-    rgba(0, 0, 0, .1);
-    -webkit-box-shadow: 0 0 12px
-    rgba(0, 0, 0, .1);
-    -moz-box-shadow: 0 0 12px rgba(0,0,0,.1);
-    -khtml-box-shadow: 0 0 12px rgba(0,0,0,.1);
-
-}
 
 #simplegallery1 .gallerydesctext{ //CSS for description DIV of Example 1 (if defined)
     text-align: left;
@@ -105,29 +86,6 @@ section {
    padding-bottom: 95px;
 }
 
-.slider-frame {
-    -webkit-box-shadow:  1px 1px 1px 1px #C7C7C7;
-    box-shadow:  1px 1px 1px 1px #C7C7C7;
-
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-
-    padding-top: 30px;
-    padding-bottom: 35px;
-
-    background: rgb(244,244,244); /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjRmNGY0IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UyZTJlMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-    background: -moz-linear-gradient(-45deg,  rgba(244,244,244,1) 0%, rgba(226,226,226,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(244,244,244,1)), color-stop(100%,rgba(226,226,226,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-45deg,  rgba(244,244,244,1) 0%,rgba(226,226,226,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(-45deg,  rgba(244,244,244,1) 0%,rgba(226,226,226,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(-45deg,  rgba(244,244,244,1) 0%,rgba(226,226,226,1) 100%); /* IE10+ */
-    background: linear-gradient(135deg,  rgba(244,244,244,1) 0%,rgba(226,226,226,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#e2e2e2',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-
-
-}
 .slide-notes-overlay {
     position: absolute;
     top: 200px;
@@ -180,5 +138,79 @@ footer a:hover {
     padding-top: 15px;
 }
 
-.caption { display: none; }
-#current-caption { width: 300px; margin: 10px auto; text-align: center; }
+/*** Set Slider dimensions here! Version 1.7+ ***/
+
+/* New in version 1.7+ */
+ul#slider {
+    /*width: 400px;*/
+    /*height: 300px;*/
+    list-style: none;
+}
+/* images with caption */
+ul#slider img {
+    width: 100%;
+    height: 100%;
+}
+/* position the panels so the captions appear correctly */
+ul#slider .panel { position: relative; }
+/* captions */
+
+
+
+
+ul#slider li {
+    position: relative;
+    list-style: none;
+}
+
+.caption {
+    width: 400px;
+    height: 250px;
+    margin: 10px auto;
+    padding-left: 10px;
+    /*border-top: yellow 5px solid; *//* adjust border color and size here */
+    background: rgba(80,80,80,.7); /* adjust caption background color here */
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    cursor: pointer;
+
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+ul#slider2 {
+    /*width: 400px;*/
+    /*height: 300px;*/
+    list-style: none;
+}
+
+ul#slider2 img {
+    width: 100%;
+    height: 100%;
+}
+
+ul#slider2 .panel { position: relative; }
+
+ul#slider2 li {
+    position: relative;
+    list-style: none;
+}
+
+.caption2 {
+    width: 500px;
+    height: 50px;
+    margin: 10px auto;
+    padding-left: 10px;
+    /*border-top: yellow 5px solid;  */
+    background: rgba(80,80,80,.7);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    cursor: pointer;
+
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}

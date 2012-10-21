@@ -1,4 +1,5 @@
 # Django settings for ajibitaapp project.
+import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -105,7 +106,7 @@ ROOT_URLCONF = 'ajibitaapp.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'ajibitaapp.wsgi.application'
 
-TEMPLATE_DIRS = ('/home/fabio/projects/ajibitaapp/templates',)
+TEMPLATE_DIRS = ('/home/fabio/projects/ajibitaapp/templates',os.path.join(os.path.dirname(__file__), 'templates'),)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

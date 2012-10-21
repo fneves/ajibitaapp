@@ -2,57 +2,57 @@
 {% load static from staticfiles %}
 
 {% block content %}
-<section id="inicio">
 
-        <div class="row-fluid"  style="    height: 500px;" >
+    <section id="inicio" style="padding-top: 115px;" class="container">
+
+        <div class="row-fluid"  style="height: 500px;" >
             <!-- Simple AnythingSlider -->
-                <ul id="slider">
-                    {% for produto in produtos %}
+            <ul id="slider">
+                {% for promocao in promocoes %}
                     <li>
-{#                        <div class="textSlide">#}
-{#                            <div class="span12">#}
-{#                                <img src="{%  static "img/home/slideshow/slide1.jpg"  %}" alt="tomato sandwich"  />#}
-{#                            </div>#}
-{#                            <div  class="slide-notes-overlay">#}
-{#                                <h3>Queenie's Killer Tomato Bagel Sandwich</h3>#}
-{#                                <h4>Ingredients</h4>#}
-{#                                <ul>#}
-{#                                    <li>1 bagel, split and toasted</li>#}
-{#                                    <li>2 tablespoons cream cheese</li>#}
-{#                                    <li>1 roma (plum) tomatoes, thinly sliced</li>#}
-{#                                </ul>#}
-{#                            </div>#}
-{#                        </div>#}
+                        {#                        <div class="textSlide">#}
+                        {#                            <div class="span12">#}
+                        {#                                <img src="{%  static "img/home/slideshow/slide1.jpg"  %}" alt="tomato sandwich"  />#}
+                        {#                            </div>#}
+                        {#                            <div  class="slide-notes-overlay">#}
+                        {#                                <h3>Queenie's Killer Tomato Bagel Sandwich</h3>#}
+                        {#                                <h4>Ingredients</h4>#}
+                        {#                                <ul>#}
+                        {#                                    <li>1 bagel, split and toasted</li>#}
+                        {#                                    <li>2 tablespoons cream cheese</li>#}
+                        {#                                    <li>1 roma (plum) tomatoes, thinly sliced</li>#}
+                        {#                                </ul>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
                         <div class="textSlide">
                             <div class="span12">
-                                <img src="{{produto.imagem.url}}" alt="tomato sandwich"  />
+                                <img src="{{promocao.produto.imagem.url}}" alt="{{ promocao.produto.descricao }}"  />
                             </div>
+                        {% if promocao.descricao != "" %}
                             <div class="caption">
-                            <h3>Queenie's Killer Tomato Bagel Sandwich</h3>
-                                <h4>Ingredients</h4>
-                                <ul>
-                                    <li>1 bagel, split and toasted</li>
-                                    <li>2 tablespoons cream cheese</li>
-                                    <li>1 roma (plum) tomatoes, thinly sliced</li>
-                                </ul>
+                                <h3>{{ promocao.titulo }}</h3>
+                                {% autoescape off %}
+                                    {{ promocao.descricao }}
+                                {% endautoescape %}
                             </div>
+                        {% endif %}
                         </div>
 
                     </li>
-                    {% endfor %}
-                </ul>
+                {% endfor %}
+            </ul>
         </div><!--/span-->
-</section>
-<hr >
+    </section>
+    <hr >
 
-<section id="empresa" class="container">
-    <div class="row" >
-        <div class="span5">
-            <div style="margin-top: 100px;">
-                <img src="{% static "img/home/slideshow/slide1.jpg" %}" alt="Smiley face" class="img-polaroid" >
+    <section id="empresa" class="container">
+        <div class="row" >
+            <div class="span5">
+                <div style="margin-top: 100px;">
+                    <img src="{% static "img/home/slideshow/slide1.jpg" %}" alt="Smiley face" class="img-polaroid" >
+                </div>
             </div>
-        </div>
-        <div class="span7">
+            <div class="span7">
                 <h3>A Empresa</h3>
                 <br>
                 <p>O ano de 1999 marcou a grande aposta do grupo no comércio dos materiais de construção, acompanhando o forte crescimento do mercado da construção. Neste ano foi criada a AJIBITA – Materiais de Construção, com sede em Abrantes.</p>
@@ -66,139 +66,120 @@
 
                 <p>A par do acompanhamento da evolução do mercado da construção, a Ajibita tem, actualmente, como grande objectivo a expansão no mercado nacional e também nos países lusófonos, para alguns dos quais já tem habitualmente exportações.</p>
 
+            </div>
         </div>
-    </div>
-</section>
-<hr>
-<section id="produtos" class="container">
-    <div class="row">
-        <div class="span12">
-            <h1>Produtos</h1>
+    </section>
+    <hr>
+    <section id="produtos" class="container">
+        <div class="row">
+            <div class="span12">
+                <h1>Produtos</h1>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="span4">
-            <h3>Acabamentos</h3>
-            <ul>
-                <li>Revestimentos Cerâmicos</li>
-                <li>Pavimentos Cerâmicos</li>
-                <li>Louças WC</li>
-                <li>Torneiras</li>
-                <li>Cimento Cola</li>
-                <li>Betumes</li>
-                <li>Móveis WC</li>
-                <li>Cabines de duche</li>
-            </ul>
-        </div>
-        <div class="span4">
-            <h3>Cozinhas/Carpintaria</h3>
-            <ul>
-                <li>Cozinhas Por Medida</li>
-                <li>Electro Domésticos</li>
-                <li>Flutuantes</li>
-                <li>Portas de Segurança</li>
-                <li>Portas de Corta-Fogo</li>
-                <li>Portas Multiusos</li>
-                <li>Alumínios</li>
-            </ul>
-        </div>
+        <div class="row">
+            <div class="span4">
+                <h3>Acabamentos</h3>
+                <ul>
+                    <li>Revestimentos Cerâmicos</li>
+                    <li>Pavimentos Cerâmicos</li>
+                    <li>Louças WC</li>
+                    <li>Torneiras</li>
+                    <li>Cimento Cola</li>
+                    <li>Betumes</li>
+                    <li>Móveis WC</li>
+                    <li>Cabines de duche</li>
+                </ul>
+            </div>
+            <div class="span4">
+                <h3>Cozinhas/Carpintaria</h3>
+                <ul>
+                    <li>Cozinhas Por Medida</li>
+                    <li>Electro Domésticos</li>
+                    <li>Flutuantes</li>
+                    <li>Portas de Segurança</li>
+                    <li>Portas de Corta-Fogo</li>
+                    <li>Portas Multiusos</li>
+                    <li>Alumínios</li>
+                </ul>
+            </div>
 
-        <div class="span4">
-            <h3>Drogaria</h3>
-            <ul>
-                <li>Tintas</li>
-                <li>Vernizes</li>
-                <li>Silicones</li>
-                <li>Fechaduras</li>
-                <li>Ferramentas Eléctricas</li>
-                <li>Ferramentas Manuais</li>
-                <li>Impermiabilização</li>
-            </ul>
+            <div class="span4">
+                <h3>Drogaria</h3>
+                <ul>
+                    <li>Tintas</li>
+                    <li>Vernizes</li>
+                    <li>Silicones</li>
+                    <li>Fechaduras</li>
+                    <li>Ferramentas Eléctricas</li>
+                    <li>Ferramentas Manuais</li>
+                    <li>Impermiabilização</li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="span4">
-            <h3>Ferro</h3>
-            <ul>
-                <li>Varão de Construção</li>
-                <li>Tubos de Aço</li>
-                <li>Tubos Galvanizados</li>
-                <li>Barras de Ferro</li>
-                <li>Cantoneiras</li>
-                <li>Chapas de Ferro</li>
-                <li>Painel Sandwiche</li>
-                <li>Chapa Lacada</li>
-                <li>Redes de Vedação</li>
-                <li>Paineis de Vedação</li>
-                <li>Pregos</li>
-            </ul>
-        </div>
-        <div class="offset4 span4">
-            <h3>Toscos</h3>
-            <ul>
-                <li>Areia do Rio</li>
-                <li>Areia Amarela</li>
-                <li>Britas</li>
-                <li>Tijolos de Alvenaria</li>
-                <li>Blocos</li>
-                <li>Abobadilhas</li>
-                <li>Vigas Pre-Esforçado</li>
-                <li>Manilhas</li>
-                <li>Lancis de Cimento</li>
-                <li>Telha</li>
-                <li>Isolamento</li>
-            </ul>
-        </div>
-    </div>
-</section>
-<section id="contactos" style="padding-bottom: 0;">
+        <div class="row">
+            <div class="span3">
+                <h3>Ferro</h3>
+                <ul>
+                    <li>Varão de Construção</li>
+                    <li>Tubos de Aço</li>
+                    <li>Tubos Galvanizados</li>
+                    <li>Barras de Ferro</li>
+                    <li>Cantoneiras</li>
+                    <li>Chapas de Ferro</li>
+                    <li>Painel Sandwiche</li>
+                    <li>Chapa Lacada</li>
+                    <li>Redes de Vedação</li>
+                    <li>Paineis de Vedação</li>
+                    <li>Pregos</li>
+                </ul>
+            </div>
+            <div class="span5" style="height: 300px;">
+                <ul id="slider2">
+                    {% for produto in produtos %}
+                        <li>
+                            <div class="textSlide">
+                                    <img src="{{produto.imagem.url}}" class="img-rounded" alt="{{ produto.descricao }}"  />
+{#                                <div class="caption2">#}
+{#                                   <p>{{ produto.descricao }}</p>#}
+{#                                </div>#}
+                            </div>
 
-</section>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="span4">
+                <h3>Toscos</h3>
+                <ul>
+                    <li>Areia do Rio</li>
+                    <li>Areia Amarela</li>
+                    <li>Britas</li>
+                    <li>Tijolos de Alvenaria</li>
+                    <li>Blocos</li>
+                    <li>Abobadilhas</li>
+                    <li>Vigas Pre-Esforçado</li>
+                    <li>Manilhas</li>
+                    <li>Lancis de Cimento</li>
+                    <li>Telha</li>
+                    <li>Isolamento</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="contactos" style="padding-bottom: 0;">
+
+    </section>
 {% endblock %}
 
 {% block extrascripts %}
     <script src="{%  static "js/simplegallery.js" %} "></script>
     <script type="text/javascript">
 
-{#        var mygallery=new simpleGallery({#}
-{#            wrapperid: "simplegallery1", //ID of main gallery container,#}
-{#            dimensions: [940, 350], //width/height of gallery in pixels. Should reflect dimensions of the images exactly#}
-{#            imagearray: [#}
-{#                ["{%  static "img/home/slideshow/slide1.jpg"  %}", "http://en.wikipedia.org/wiki/Swimming_pool", "_new", "There's nothing like a nice swim in the Summer."],#}
-{#                ["{%  static "img/home/slideshow/slide2.jpg"  %}", "http://en.wikipedia.org/wiki/Cave", "", ""],#}
-{#                ["http://i30.tinypic.com/531q3n.jpg", "", "", "Eat your fruits, it's good for you!"],#}
-{#                ["http://i31.tinypic.com/119w28m.jpg", "", "", ""]#}
-{#            ],#}
-{#            autoplay: [true, 2500, 2], //[auto_play_boolean, delay_btw_slide_millisec, cycles_before_stopping_int]#}
-{#            persist: false, //remember last viewed slide and recall within same session?#}
-{#            fadeduration: 500, //transition duration (milliseconds)#}
-{#            oninit:function(){ //event that fires when gallery has initialized/ ready to run#}
-{#                //Keyword "this": references current gallery instance (ie: try this.navigate("play/pause"))#}
-{#            },#}
-{#            onslide:function(curslide, i){ //event that fires after each slide is shown#}
-{#                //Keyword "this": references current gallery instance#}
-{#                //curslide: returns DOM reference to current slide's DIV (ie: try alert(curslide.innerHTML)#}
-{#                //i: integer reflecting current image within collection being shown (0=1st image, 1=2nd etc)#}
-{#            }#}
-{#        })#}
-
 
         $(function(){
 
-            $('#slider').anythingSlider({theme:'polished', autoPlay:false, toggleArrows : true,expand:true
-            ,
-                // *********** Callbacks ***********
-                // Callback when the plugin finished initializing
-                onInitialized: function(e, slider) { updateCaption(slider); },
-
-                // Callback before slide animates
-                onSlideBegin: function(e, slider) {
-                    $('#current-caption').fadeOut(200);
-                },
-
-                // Callback when slide completes - no event variable!
-                onSlideComplete: function(slider) { updateCaption(slider); }})
-            ;
+            $('#slider').anythingSlider({theme:'polished', autoPlay:true, toggleArrows : true,expand:true});
+            $('#slider2').anythingSlider({theme:'polished', autoPlay:true, toggleArrows : false, expand:true, buildArrows:false});
         });
     </script>
 

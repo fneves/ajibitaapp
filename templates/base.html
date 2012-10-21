@@ -52,7 +52,7 @@
             <a class="brand logo" href="#">AJIBITA</a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li class="active"><a id="inicioLink"  href="inicio">Início</a></li>
+                    <li class="active"><a id="inicioLink"  href="#inicio">Início</a></li>
                     <li><a href="#empresa" id="empresaLink" name="empresa" >A empresa</a></li>
                     <li><a href="#produtos" id="prodLink" name="produtos">Produtos</a></li>
                     <li><a href="#contactos" id="contactosLink" >Contactos</a></li>
@@ -113,6 +113,10 @@
             $(value).bind("click",function(e) {
                 e.preventDefault();
                 scrollTo("grupo");
+                $('.nav li .active').each(function(index2,value2) {
+                    $(value2).removeClass('active');
+                });
+                $(value).parent.addClass('active');
             });
         });
 
@@ -123,6 +127,7 @@
             });
         });
     });
+
 </script>
 </body>
 <footer class="footer">
@@ -174,7 +179,7 @@
 
                     <br>
                     <div class="img-polaroid" style="width:640px; height:480px">
-                        <iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.pt/maps/ms?msa=0&amp;msid=206657056123715244294.0004cc063dd97cf0e78c4&amp;ie=UTF8&amp;t=m&amp;ll=39.528937,-8.09761&amp;spn=0.254214,0.439453&amp;z=11&amp;output=embed"></iframe><br /><small>Ver <a href="https://maps.google.pt/maps/ms?msa=0&amp;msid=206657056123715244294.0004cc063dd97cf0e78c4&amp;ie=UTF8&amp;t=m&amp;ll=39.528937,-8.09761&amp;spn=0.254214,0.439453&amp;z=11&amp;source=embed" style="color:#0000FF;text-align:left">Ajibita</a> num mapa maior</small>
+{#                        <iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.pt/maps/ms?msa=0&amp;msid=206657056123715244294.0004cc063dd97cf0e78c4&amp;ie=UTF8&amp;t=m&amp;ll=39.528937,-8.09761&amp;spn=0.254214,0.439453&amp;z=11&amp;output=embed"></iframe><br /><small>Ver <a href="https://maps.google.pt/maps/ms?msa=0&amp;msid=206657056123715244294.0004cc063dd97cf0e78c4&amp;ie=UTF8&amp;t=m&amp;ll=39.528937,-8.09761&amp;spn=0.254214,0.439453&amp;z=11&amp;source=embed" style="color:#0000FF;text-align:left">Ajibita</a> num mapa maior</small>#}
                     </div>
 
                 </div>
