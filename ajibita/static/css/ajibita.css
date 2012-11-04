@@ -6,10 +6,10 @@
 }
 
 
-#simplegallery1 .gallerydesctext{ //CSS for description DIV of Example 1 (if defined)
-    text-align: left;
-    padding: 2px 5px;
-}
+/*#simplegallery1 .gallerydesctext{ //CSS for description DIV of Example 1 (if defined)*/
+    /*text-align: left;*/
+    /*padding: 2px 5px;*/
+/*}*/
 
 .navbar .container {
     width: 940px;
@@ -86,23 +86,23 @@ section {
    padding-bottom: 95px;
 }
 
-.slide-notes-overlay {
-    position: absolute;
-    top: 200px;
-    left: 400px;
-    z-index: 100;
+/*.slide-notes-overlay {*/
+    /*position: absolute;*/
+    /*top: 200px;*/
+    /*left: 400px;*/
+    /*z-index: 100;*/
 
 
-    background-color: #2f2e2e;
-    opacity: 0.8;
-    padding: 18px;
+    /*background-color: #2f2e2e;*/
+    /*opacity: 0.8;*/
+    /*padding: 18px;*/
 
-    width: 350px;
-    height: 215px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    color: white;
-}
+    /*width: 350px;*/
+    /*height: 215px;*/
+    /*-webkit-border-radius: 6px;*/
+    /*border-radius: 6px;*/
+    /*color: white;*/
+/*}*/
 
 .bodycontent {
     background: white;
@@ -163,22 +163,22 @@ ul#slider li {
     list-style: none;
 }
 
-.caption {
-    width: 400px;
-    height: 250px;
-    margin: 10px auto;
-    padding-left: 10px;
-    /*border-top: yellow 5px solid; *//* adjust border color and size here */
-    background: rgba(80,80,80,.7); /* adjust caption background color here */
-    color: white;
-    position: absolute;
-    bottom: 0;
-    right: 10px;
-    cursor: pointer;
+/*.caption {*/
+    /*width: 400px;*/
+    /*height: 250px;*/
+    /*margin: 10px auto;*/
+    /*padding-left: 10px;*/
+    /*border-top: yellow 5px solid; *//**//* adjust border color and size here */
+    /*background: rgba(80,80,80,.7); *//* adjust caption background color here */
+    /*color: white;*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*right: 10px;*/
+    /*cursor: pointer;*/
 
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-}
+    /*-webkit-border-radius: 6px;*/
+    /*border-radius: 6px;*/
+/*}*/
 
 ul#slider2 {
     /*width: 400px;*/
@@ -214,3 +214,8 @@ ul#slider2 li {
     -webkit-border-radius: 6px;
     border-radius: 6px;
 }
+
+.carousel-control{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+

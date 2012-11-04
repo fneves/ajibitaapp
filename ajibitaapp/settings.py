@@ -45,8 +45,6 @@ USE_TZ = True
 #MEDIA_ROOT = root + '/../upload/'
 #STATIC_ROOT = root + '/../static/'
 
-#MEDIA_ROOT = '/home/fabio/projects/ajibitaapp/upload/'
-
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
@@ -163,16 +161,17 @@ import dj_database_url
 #commment on development time
 DATABASES['default'] =  dj_database_url.config()
 
+#MEDIA_ROOT = '/home/fabio/projects/ajibitaapp/upload/'
 MEDIA_ROOT = '/upload/'
 STATIC_ROOT = '/static/'
-
-
+#
+#
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = 'AKIAIO62AUQ62G2AU3AA'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'ajibita'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
+#
 DEFAULT_FILE_STORAGE = 'ajibitaapp.s3utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE  = 'ajibitaapp.s3utils.StaticRootS3BotoStorage'
 
